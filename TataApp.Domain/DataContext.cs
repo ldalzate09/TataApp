@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace TataApp.Domain
 {
@@ -6,6 +7,12 @@ namespace TataApp.Domain
     {
         public DataContext() : base("DefaultConnection")
         {
+        }
+
+        // Disable casading delete
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
 
         public DbSet<DocumentType> DocumentTypes { get; set; }
