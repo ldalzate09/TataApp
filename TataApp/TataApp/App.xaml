@@ -1,10 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:infra="clr-namespace:TataApp.Infrastructure;assembly=TataApp"
              x:Class="TataApp.App">
-	<Application.Resources>
+    <Application.Resources>
+        <!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <!-- Locator -->
+            <infra:InstanceLocator x:Key="Locator"/>
 
-		<!-- Application resource dictionary -->
+            <!-- Colors -->
+            <!-- Amarillo -->
+            <Color x:Key="MainColor">#FFB71B</Color>
+            <!-- Azul -->
+            <Color x:Key="FontColor">#30588C</Color>
+            <!-- Amarillo -->
+            <Color x:Key="AccentColor1">#FFB71B</Color>
+            <!-- Rojo -->
+            <Color x:Key="AccentColor2">#CE172D</Color>
+            <!-- Blanco -->
+            <Color x:Key="BackgroundColor">#F2F2F2</Color>
 
-	</Application.Resources>
+            <!-- Menu Colors -->
+            <!-- Blanco -->
+            <Color x:Key="MenuColor">#F2F2F2</Color>
+            <!-- Azul -->
+            <Color x:Key="MenuFontColor">#30588C</Color>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

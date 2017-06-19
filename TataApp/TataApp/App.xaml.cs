@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using TataApp.Views;
 using Xamarin.Forms;
 
 namespace TataApp
 {
     public partial class App : Application
     {
+        public static NavigationPage Navigator { get; internal set; }
+
         public App()
         {
             InitializeComponent();
-
-            MainPage = new TataApp.MainPage();
+            //MainPage = new LoginPage();
+            MainPage = new MasterPage();
         }
 
         protected override void OnStart()
