@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace TataApp.Models
 {
-    public class EmployeeRequest
+    public class Activity
     {
-        public String EmailOrCode { get; set; }
+        public int ActivityId { get; set; }
+
+        public string Description { get; set; }
     }
 }

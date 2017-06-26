@@ -9,6 +9,10 @@
             <!-- Locator -->
             <infra:InstanceLocator x:Key="Locator"/>
 
+            <!-- Parameters -->
+            <x:String x:Key="URLAPI">http://tataappapi.azurewebsites.net</x:String>
+            <x:String x:Key="URLBackend">http://tataappbackend.azurewebsites.net</x:String>
+
             <!-- Colors -->
             <!-- Amarillo -->
             <Color x:Key="MainColor">#FFB71B</Color>

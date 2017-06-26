@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TataApp.Models;
 
-namespace TataApp.Models
+namespace TataApp.ViewModels
 {
-    public class EmployeeRequest
+    public class ActivityItemViewModel : Activity
     {
-        public String EmailOrCode { get; set; }
     }
 }

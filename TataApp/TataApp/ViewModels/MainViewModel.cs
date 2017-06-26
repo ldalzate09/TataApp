@@ -1,26 +1,53 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Command;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using TataApp.Models;
+using TataApp.Services;
 
 namespace TataApp.ViewModels
 {
     class MainViewModel
     {
+        #region Attributes
+        NavigationService navigationServices;
+        #endregion
 
         #region Properties
         public ObservableCollection<MenuItemViewModel> Menu { get; set; } 
         public LoginViewModel Login { get; set; }
+        public TimesViewModel Times { get; set; }
+        public NewTimeViewModel NewTime { get; set; }
+        public Employee Employee { get; set; }
         #endregion
 
         #region Contructors
         public MainViewModel()
         {
+            instance = this;
+
+            navigationServices = new NavigationService();
+
             Menu = new ObservableCollection<MenuItemViewModel>();
             Login = new LoginViewModel();
             LoadMenu();
+        }
+        #endregion
+
+        #region Singleton
+        private static MainViewModel instance;
+
+        public static MainViewModel GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new MainViewModel();
+            }
+            return instance;
         }
         #endregion
 
@@ -31,7 +58,7 @@ namespace TataApp.ViewModels
             {
                 Title = "Register Timer",
                 Icon = "ic_access_alarm.png",
-                PageName = "RegisterTimePage",
+                PageName = "TimesPage",
             });
 
             Menu.Add(new MenuItemViewModel
@@ -54,7 +81,21 @@ namespace TataApp.ViewModels
                 Icon = "ic_exit_to_app.png",
                 PageName = "LoginPage",
             });
-        } 
+        }
+        #endregion
+
+        #region Commands
+        public ICommand NewTimeCommand
+        {
+            get { return new RelayCommand(GoNewTime); }
+        }
+
+        private async void GoNewTime()
+        {
+            NewTime = new NewTimeViewModel();
+            await navigationServices.Navigate("NewTimePage");
+        }
+
         #endregion
     }
 }

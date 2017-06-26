@@ -1,6 +1,6 @@
 ﻿namespace TataApp.Models
 {
-    class Response
+    public class Response
     {
         public bool IsSuccess { get; set; }
 

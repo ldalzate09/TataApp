@@ -3,7 +3,7 @@ using System;
 
 namespace TataApp.Models
 {
-    class TokenResponse
+    public class TokenResponse
     {
         [JsonProperty(PropertyName = "access_token")]
         public string AccessToken { get; set; }
