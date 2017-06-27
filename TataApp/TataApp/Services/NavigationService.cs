@@ -40,5 +40,10 @@ namespace TataApp.Services
                     break;
             }
         }
+
+        public async Task Back()
+        {
+            await App.Navigator.PopAsync();
+        }
     }
 }
