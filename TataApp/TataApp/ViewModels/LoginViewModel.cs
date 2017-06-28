@@ -142,7 +142,7 @@ namespace TataApp.ViewModels
             IsEnabled = false;
 
             var checkConnetion = await apiService.CheckConnection();
-            if(!checkConnetion.IsSuccess)
+            if (!checkConnetion.IsSuccess)
             {
                 IsRunning = false;
                 IsEnabled = true;
@@ -203,6 +203,13 @@ namespace TataApp.ViewModels
             var mainViewModel = MainViewModel.GetInstance();
             mainViewModel.Employee = employee;
             navigationService.SetMainPage("MasterPage");
+        }
+
+        public ICommand LoginFacebookCommand { get { return new RelayCommand(LoginFacebook); } }
+
+        private async void LoginFacebook()
+        {
+            navigationService.SetMainPage("LoginFacebookPage");
         }
         #endregion
     }
