@@ -8,7 +8,7 @@ using Xamarin.Auth;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
-[assembly: ExportRenderer(typeof(LoginPage), typeof(TataApp.iOS.LoginPageRenderer))]
+[assembly: ExportRenderer(typeof(LoginFacebookPage), typeof(TataApp.iOS.LoginPageRenderer))]
 namespace TataApp.iOS
 {
     public class LoginPageRenderer : PageRenderer

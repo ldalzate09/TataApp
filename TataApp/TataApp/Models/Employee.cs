@@ -55,8 +55,13 @@ namespace TataApp.Models
                 {
                     return "contact.png";
                 }
-                var urlApi = Application.Current.Resources["URLAPI"].ToString();
-                return string.Format("{0}{1}", urlApi, Picture.Substring(1));
+
+                if (LoginTypeId == 1)
+                {
+                    var urlApi = Application.Current.Resources["URLAPI"].ToString();
+                    return string.Format("{0}{1}", urlApi, Picture.Substring(1));
+                }
+                return Picture;   
             }
         }
 
