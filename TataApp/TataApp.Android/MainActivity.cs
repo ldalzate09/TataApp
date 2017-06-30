@@ -12,8 +12,11 @@ namespace TataApp.Droid
     [Activity(Label = "Bancolombia App", Icon = "@drawable/ic_launcher", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+        #region Methods
         protected override void OnCreate(Bundle bundle)
         {
+            instance = this;
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
@@ -23,6 +26,21 @@ namespace TataApp.Droid
             Xamarin.FormsMaps.Init(this, bundle);
             LoadApplication(new App());
         }
+        #endregion
+
+        #region Singleton
+        private static MainActivity instance;
+
+        public static MainActivity GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new MainActivity();
+            }
+
+            return instance;
+        }
+        #endregion
     }
 }
 

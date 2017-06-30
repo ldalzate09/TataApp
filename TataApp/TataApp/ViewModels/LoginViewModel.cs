@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace TataApp.ViewModels
 {
-    class LoginViewModel : INotifyPropertyChanged
+    public class LoginViewModel : INotifyPropertyChanged
     {
         #region Events
         public event PropertyChangedEventHandler PropertyChanged;
@@ -202,6 +202,7 @@ namespace TataApp.ViewModels
 
             var mainViewModel = MainViewModel.GetInstance();
             mainViewModel.Employee = employee;
+            mainViewModel.RegisterDevice();
             navigationService.SetMainPage("MasterPage");
         }
 

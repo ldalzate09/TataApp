@@ -38,6 +38,7 @@
     <Compile Include="Controls\BindablePicker.cs" />
     <Compile Include="Data\DataAccess.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
+    <Compile Include="Interfaces\IRegisterDevice.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\EmployeeRequest.cs" />

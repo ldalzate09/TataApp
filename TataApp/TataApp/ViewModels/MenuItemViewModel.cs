@@ -9,7 +9,7 @@ using TataApp.Services;
 
 namespace TataApp.ViewModels
 {
-    class MenuItemViewModel
+    public class MenuItemViewModel
     {
         #region Atributes
         private NavigationService navigationService;
