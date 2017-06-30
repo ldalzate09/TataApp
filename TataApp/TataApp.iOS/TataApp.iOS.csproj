@@ -89,6 +89,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
+    <Compile Include="Constans.cs" />
     <Compile Include="LoginPageRenderer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
@@ -167,6 +168,10 @@
     <Reference Include="Xamarin.Auth.iOS">
       <HintPath>..\..\Components\xamarin.auth-1.2.3.1\lib\ios-unified\Xamarin.Auth.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Azure.NotificationHubs.iOS, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Azure.NotificationHubs.iOS.1.2.5.2\lib\Xamarin.iOS10\Xamarin.Azure.NotificationHubs.iOS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
       <Private>True</Private>
@@ -194,6 +199,10 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TataApp.Android\TataApp.Android.csproj">
+      <Project>{2CE9FCD8-55BD-410F-BD57-4313757700A9}</Project>
+      <Name>TataApp.Android</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TataApp\TataApp.csproj">
       <Project>{0c6ade83-4ded-43e7-b3d1-764c98d5744c}</Project>
       <Name>TataApp</Name>
